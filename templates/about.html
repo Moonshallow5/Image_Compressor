@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="bg-yellow-100">
+
+    <nav class="bg-green-200 shadow">
+        <div class="flex justify-end items-center p-4">
+            <div class="flex space-x-8 ml-auto">
+                <a href="/" class="text-gray-700 hover:bg-blue-500 px-3 py-2 rounded">Home</a>
+                <a href="/home" class="text-gray-700 hover:bg-blue-500 px-3 py-2 rounded">Compress Images</a>
+                <a href="/about" class="text-gray-700 hover:bg-blue-500 px-3 py-2 rounded">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mx-auto my-10 p-4">
+        <h1 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Image Compression Comparison</h1>
+
+        <!-- Repeat this block for each pair of images -->
+        <div class="flex flex-wrap justify-start space-x-4 mb-6">
+            <!-- Original Image -->
+            <div class="text-center">
+                <h2 class="text-lg font-medium text-gray-700 mb-2">Original Image</h2>
+                <img src="{{ url_for('static', filename='images/bird_small.jpg') }}" alt="Original Image 1" class="w-48 h-auto rounded shadow-lg">
+                <!-- Description -->
+            </div>
+            
+            <!-- Compressed Image -->
+            <div class="text-center">
+                <h2 class="text-lg font-medium text-gray-700 mb-2">Compressed Image</h2>
+                <img src="{{ url_for('static', filename='images/bird_small_compressed.jpg') }}" alt="Compressed Image 1" class="w-48 h-auto rounded shadow-lg">
+                <p class="flex text-center  text-sm mt-2">6kB to 5kB (17% compression)</p> <!-- Description -->
+                
+            </div>
+        
+
+            <div class="text-center">
+                <h2 class="text-lg font-medium text-gray-700 mb-2">Original Image</h2>
+                <img src="{{ url_for('static', filename='images/resized-rabbit.jpg') }}" alt="Original Image 1" class="w-48 h-auto rounded shadow-lg">
+            </div>
+            
+            <!-- Compressed Image -->
+            <div class="text-center">
+                <h2 class="text-lg font-medium text-gray-700 mb-2">Compressed Image</h2>
+                <img src="{{ url_for('static', filename='images/resized-rabbit-compressed.jpg') }}" alt="Compressed Image 1" class="w-48 h-auto rounded shadow-lg">
+                <p class="flex text-center  text-sm mt-2">11kB to 6kB (45% compression)</p>
+                
+            </div>
+
+
+            <div class="text-center">
+                <h2 class="text-lg font-medium text-gray-700 mb-2">Original Image</h2>
+                <img src="{{ url_for('static', filename='images/panda.jpg') }}" alt="Original Image 1" class="w-48 h-auto rounded shadow-lg">
+            </div>
+            
+            <!-- Compressed Image -->
+            <div class="text-center">
+                <h2 class="text-lg font-medium text-gray-700 mb-2">Compressed Image</h2>
+                <img src="{{ url_for('static', filename='images/panda-compressed.jpg') }}" alt="Compressed Image 1" class="w-48 h-auto rounded shadow-lg">
+                <p class="flex text-center  text-sm mt-2">30kB to 24kB (20% compression)</p>
+                
+            </div>
+        </div>
+        
+  
+        
+        <!-- Add more image pairs here as needed -->
+
+    </section>
+</body>
