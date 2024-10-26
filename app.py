@@ -36,12 +36,6 @@ def home1():
     print("X_recovered min:", X_recovered.min(), "max:", X_recovered.max())
     compressed_image = Image.fromarray((X_recovered * 255).astype(np.uint8),'RGB')
     
-
-    '''
-    fig, ax = plt.subplots()
-    ax.imshow(X_recovered)
-    ax.axis('off')
-    '''
     
     # Save the figure to a BytesIO object
     output = BytesIO()
