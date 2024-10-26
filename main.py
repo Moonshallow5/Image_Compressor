@@ -1,12 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-#original_img = plt.imread('./bird_small.png')
+
+'''
+
+Code from one of Coursera's Jupyter Notebook in the Machine Learning Specialisation
+
+'''
 
 
-#X_img = np.reshape(original_img, (original_img.shape[0] * original_img.shape[1], 3))
-#K = 16
-#max_iters = 10
 
 def kMeans_init_centroids(X, K):
     """
@@ -186,34 +188,3 @@ def show_centroid_colors(centroids):
     plt.xticks(num)
     plt.yticks([])
     plt.imshow(palette)
-'''
-
-initial_centroids = kMeans_init_centroids(X_img, K)
-
-# Run K-Means - this can take a couple of minutes depending on K and max_iters
-centroids, idx = run_kMeans(X_img, initial_centroids, max_iters)
-
-plot_kMeans_RGB(X_img, centroids, idx, K)
-
-idx = find_closest_centroids(X_img, centroids)
-
-# Replace each pixel with the color of the closest centroid
-X_recovered = centroids[idx, :] 
-
-# Reshape image into proper dimensions
-X_recovered = np.reshape(X_recovered, original_img.shape) 
-
-fig, ax = plt.subplots(1,2, figsize=(16,16))
-plt.axis('off')
-
-ax[0].imshow(original_img)
-ax[0].set_title('Original')
-ax[0].set_axis_off()
-
-# Display compressed image
-ax[1].imshow(X_recovered)
-ax[1].set_title('Compressed with %d colours'%K)
-ax[1].set_axis_off()
-
-plt.show()
-'''
