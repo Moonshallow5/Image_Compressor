@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'curr'; /* Use a name for your font */
+    src: url('../fonts/AnandaBlackPersonalUseRegular-rg9Rx.ttf') format('truetype'); /* Adjust the path as necessary */
+    font-weight: normal; /* Adjust if your font has different weights */
+    font-style: normal; /* Adjust if your font has different styles */
+  }
+  .text-cursive {
+      font-family: 'curr', cursive; /* Fallback to cursive */
+  }
